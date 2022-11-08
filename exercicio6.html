@@ -1,0 +1,67 @@
+<!-- Enunciado:
+Fabiana é uma pessoa muito indecisa e precisa juntar dinheiro para conseguir em suas férias ir viajar
+
+Ela terá algumas opções a escolher, com seus respectivos valores
+
+1- Disney: R$ 15k
+2- Madrid: R$ 12k
+3- Maceio: R$ 8k
+4- Ribeirão Preto: R$ 5k
+
+Faça um programa que solicite o nome do usuário, o valor (budget) que o usuário tem para a viagem, 
+a viagem que o usuário deseja e mostre no final do programa se o usuário pode viajar ou se ele não pode
+
+Se ele não poder viajar, mostre o quanto falta para o mesmo economizar -->
+
+<script>
+    usuario = prompt('Qual o seu nome?')
+    budget = prompt('Qual o valor que você possui para viajar em reais?')
+    alert("Essas são as nossas opções de destino:" + "\n" + "Disney" + "\n" + "Madrid" + "\n" + "Maceio" + "\n" + "Ribeirão Preto")
+    escolhaViagem = prompt('Qual delas você deseja escolher?')
+
+    if (escolhaViagem == "Disney") {
+        escolhaViagem = 'disney';
+    } else if (escolhaViagem == "Madrid") {
+        escolhaViagem = 'madrid';
+    } else if (escolhaViagem == "Maceio") {
+        escolhaViagem = 'maceio';
+    } else if (escolhaViagem == "Ribeirão Preto") {
+        escolhaViagem = 'ribeiraoPreto';
+    } else {
+        alert("Você não selecionou uma opção válida!")
+    }
+
+    budgetDisney = 15000
+    budgetMadrid = 12000
+    budgetMaceio = 8000
+    budgetRibeiraoPreto = 5000
+
+    if ((escolhaViagem == 'disney') && (budget >= budgetDisney)) {
+        alert('Parabéns! Você possui o dinheiro para essa viagem!')
+    } else if ((escolhaViagem == 'disney') && (budget <= budgetDisney)) {
+        diferencaPreco = Number((budget - budgetDisney))
+        alert('Você precisa economizar: R$ ' + diferencaPreco + " para viajar para " + escolhaViagem)
+    }
+
+    if ((escolhaViagem == 'madrid') && (budget >= budgetMadrid)) {
+        alert('Parabéns! Você possui o dinheiro para essa viagem!')
+    } else if ((escolhaViagem == 'madrid') && (budget <= budgetMadrid)) {
+        diferencaPreco = Number((budget - budgetMadrid))
+        alert('Você precisa economizar: R$ ' + diferencaPreco + " para viajar para " + escolhaViagem)
+    }
+
+    if ((escolhaViagem == 'maceio') && (budget >= budgetMaceio)) {
+        alert('Parabéns! Você possui o dinheiro para essa viagem!')
+    } else if ((escolhaViagem == 'maceio') && (budget <= budgetMaceio)) {
+        diferencaPreco = Number((budget - budgetMaceio))
+        alert('Você precisa economizar: R$ ' + diferencaPreco + " para viajar para " + escolhaViagem)
+    }
+
+    if ((escolhaViagem == 'ribeiraoPreto') && (budget >= budgetRibeiraoPreto)) {
+        alert('Parabéns! Você possui o dinheiro para essa viagem!')
+    } else if ((escolhaViagem == 'ribeiraoPreto') && (budget <= budgetRibeiraoPreto)) {
+        diferencaPreco = Number((budget - budgetRibeiraoPreto))
+        alert('Você precisa economizar: R$ ' + diferencaPreco + " para viajar para " + escolhaViagem)
+    }
+
+</script>
