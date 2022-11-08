@@ -18,7 +18,7 @@ Se ele não poder viajar, mostre o quanto falta para o mesmo economizar -->
     let valor = Number(prompt('Qual o valor que você possui para viajar em reais?'))
 
     let opcaoViagem = parseInt(prompt('Escolha um dos destinos abaixo: \n 1) Disney \n 2) Madrid \n 3) Maceio \n 4) Ribeirão Preto'))
-  
+
     switch (opcaoViagem) {
         case 1:
             valorViagem = 15000
@@ -41,7 +41,7 @@ Se ele não poder viajar, mostre o quanto falta para o mesmo economizar -->
     let valorSobraCliente = valor - valorViagem
     if (valorSobraCliente < 0) {
         valorSobraCliente = valorSobraCliente * - 1
-        alert(`Infelizmente você não tem saldo suficiente para fazer a viagem. Faltam ${valorSobraCliente.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+        alert(`Infelizmente você não tem saldo suficiente para fazer a viagem. Faltam ${valorSobraCliente.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`)
     }
     else {
         alert(`Parabéns você possui o valor suficiente para a sua viagem`)
