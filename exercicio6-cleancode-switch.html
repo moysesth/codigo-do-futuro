@@ -1,0 +1,50 @@
+<!-- Enunciado:
+Fabiana é uma pessoa muito indecisa e precisa juntar dinheiro para conseguir em suas férias ir viajar
+
+Ela terá algumas opções a escolher, com seus respectivos valores
+
+1- Disney: R$ 15k
+2- Madrid: R$ 12k
+3- Maceio: R$ 8k
+4- Ribeirão Preto: R$ 5k
+
+Faça um programa que solicite o nome do usuário, o valor (budget) que o usuário tem para a viagem, 
+a viagem que o usuário deseja e mostre no final do programa se o usuário pode viajar ou se ele não pode
+
+Se ele não poder viajar, mostre o quanto falta para o mesmo economizar -->
+
+<script>
+    let usuario = prompt('Qual o seu nome?')
+    let valor = Number(prompt('Qual o valor que você possui para viajar em reais?'))
+
+    let opcaoViagem = parseInt(prompt('Escolha um dos destinos abaixo: \n 1) Disney \n 2) Madrid \n 3) Maceio \n 4) Ribeirão Preto'))
+  
+    switch (opcaoViagem) {
+        case 1:
+            valorViagem = 15000
+            break;
+        case 2:
+            valorViagem = 12000
+            break;
+        case 3:
+            valorViagem = 8000
+            break;
+        case 4:
+            valorViagem = 5000
+            break;
+    }
+
+    if (valorViagem < 1) {
+        alert('Valor da viagem inválido')
+    }
+
+    let valorSobraCliente = valor - valorViagem
+    if (valorSobraCliente < 0) {
+        valorSobraCliente = valorSobraCliente * - 1
+        alert(`Infelizmente você não tem saldo suficiente para fazer a viagem. Faltam ${valorSobraCliente.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`)
+    }
+    else {
+        alert(`Parabéns você possui o valor suficiente para a sua viagem`)
+    }
+
+</script>
