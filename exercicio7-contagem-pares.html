@@ -15,17 +15,16 @@ Dica: para saber se um número é par: numero % 2 == 0 -->
 
 
 <script>
-    numeroInicial = Number(prompt('Digite o número inicial'))
-    numeroFinal = Number(prompt('Digite o número final'))
-    numerosPares = []
+    numeroInicial = Number(prompt('Digite o número inicial'));
+    numeroFinal = Number(prompt('Digite o número final'));
+    numerosPares = [];
 
     while (numeroInicial <= numeroFinal) {
-        let pares = (numeroInicial%2 == 0)
+        let pares = (numeroInicial%2 == 0);
         if (pares) {
-            numerosPares.push(numeroInicial)
+            numerosPares.push(numeroInicial);
         }
-        numeroInicial++
+        numeroInicial++;
     }
-
-    console.log('Os numéros pares são: ' + numerosPares)
+    console.log('Os numéros pares são: ' + numerosPares);
 </script>
