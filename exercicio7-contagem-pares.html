@@ -1,0 +1,31 @@
+<!-- Enunciado:
+
+João precisa de um sistema que solicite o número de início 
+E o número final da operação
+Faça um programa que mostre somente os números pares entre os números digitados
+
+Exemplo de execução:
+
+Número inicial: 1
+Número final: 10
+
+Mostra: 2,4,6,8,10 
+
+Dica: para saber se um número é par: numero % 2 == 0 -->
+
+
+<script>
+    numeroInicial = Number(prompt('Digite o número inicial'))
+    numeroFinal = Number(prompt('Digite o número final'))
+    numerosPares = []
+
+    while (numeroInicial <= numeroFinal) {
+        let pares = (numeroInicial%2 == 0)
+        if (pares) {
+            numerosPares.push(numeroInicial)
+        }
+        numeroInicial++
+    }
+
+    console.log('Os numéros pares são: ' + numerosPares)
+</script>
