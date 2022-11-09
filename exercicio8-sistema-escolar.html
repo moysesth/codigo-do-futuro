@@ -19,15 +19,12 @@ Se a nota for >= 7, aprovado
 Se a nota for entre 5 e menor que 7, recuperação
 Se a nota for menor que 5, reprovado -->
 
-
 <script>
-
     var alunos = [];
     var menu;
 
     //Manter loop enquanto usuário não pedir pra sair do menu:
     while (menu != 4) {
-
         menu = Number(prompt("Selecione uma opção: \n1- Novo cadastro\n2- Relatório completo\n3- Consulta por aluno\n4- Sair"))
 
         switch (menu) {
@@ -47,16 +44,16 @@ Se a nota for menor que 5, reprovado -->
                     return somaDasNotas + i;
                 })
 
-                let resultadoAluno = somaDasNotas / quantiaNotas
+                let resultadoAluno = (somaDasNotas / quantiaNotas).toFixed(2)
                 if (resultadoAluno >= 7) {
                     status = 'Aprovado';
                 }
                 else if (resultadoAluno >= 5 && resultadoAluno < 7) {
-                    difNotas = Number(7 - resultadoAluno)                    
+                    difNotas = Number(7 - resultadoAluno)
                     status = `O ${nome} está de recuperação por uma diferença de ${difNotas} pontos`;
                 }
                 else {
-                    difNotas = Number(5 - resultadoAluno)                    
+                    difNotas = Number(5 - resultadoAluno)
                     status = `O ${nome} está reprovado por uma diferença de ${difNotas} pontos`;
                 }
                 alunos.push({ 'nome': nome, 'matricula': matricula, 'notas': notasCompleto, 'media': resultadoAluno, 'status': status })
