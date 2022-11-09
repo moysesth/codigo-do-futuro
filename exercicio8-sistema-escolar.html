@@ -1,0 +1,91 @@
+<!-- Enunciado:
+
+Francisco precisa de um sistema para gerenciar sua escola
+Neste sistema precisamos capturar o aluno com as seguintes informações:
+
+Aluno: 
+    - nome;
+    - matícula;
+    - notas
+
+As notas podem ser quantas o coordenador quiser (ou seja, deixe o usuário escolher a quantidade de notas)
+
+Neste sistema você irá precisar de um menu onde irá fazer:
+O cadastro do aluno, digitando nome e matrícula, além das notas
+Vai precisar de um relatório, onde irá mostrar a lista de alunos com: nome, matrícula, notas, média, aprovado/reprovado/recuperação
+
+Critério:
+Se a nota for >= 7, aprovado
+Se a nota for entre 5 e menor que 7, recuperação
+Se a nota for menor que 5, reprovado -->
+
+
+<script>
+
+    var alunos = [];
+    var menu;
+
+    //Manter loop enquanto usuário não pedir pra sair do menu:
+    while (menu != 4) {
+
+        menu = Number(prompt("Selecione uma opção: \n1- Novo cadastro\n2- Relatório completo\n3- Consulta por aluno\n4- Sair"))
+
+        switch (menu) {
+            case 1:
+                nome = prompt('Qual o nome do aluno?')
+                matricula = prompt(`Qual a matrícula do ${nome}?`)
+                quantiaNotas = Number(prompt('Quantas notas você deseja adicionar?'))
+
+                var i = 1;
+                notas = [];
+                while (i <= quantiaNotas) {
+                    notas.push(Number(prompt(`Insira a ${i}ª nota do ${nome}`)))
+                    i++
+                }
+                notasCompleto = notas.toString()
+                somaDasNotas = notas.reduce(function (somaDasNotas, i) {
+                    return somaDasNotas + i;
+                })
+
+                let resultadoAluno = somaDasNotas / quantiaNotas
+                if (resultadoAluno >= 7) {
+                    status = 'Aprovado';
+                }
+                else if (resultadoAluno >= 5 && resultadoAluno < 7) {
+                    difNotas = Number(7 - resultadoAluno)                    
+                    status = `O ${nome} está de recuperação por uma diferença de ${difNotas} pontos`;
+                }
+                else {
+                    difNotas = Number(5 - resultadoAluno)                    
+                    status = `O ${nome} está reprovado por uma diferença de ${difNotas} pontos`;
+                }
+                alunos.push({ 'nome': nome, 'matricula': matricula, 'notas': notasCompleto, 'media': resultadoAluno, 'status': status })
+                break;
+
+            case 2:
+                alert('O relatório completo está disponível no seu console.')
+                console.table(alunos)
+                break;
+
+            case 3:
+                consultaIndividual = Number(prompt(`Você deseja buscar por: \n 1- Nome \n 2- Número de Matrícula`))
+                switch (consultaIndividual) {
+                    case 1:
+                        buscarNome = prompt('Qual o nome do aluno?')
+                        findName = alunos.find(aluno => aluno.nome == buscarNome)
+                        alert(`A busca pelo ${buscarNome} está disponível no seu console.`)
+                        console.table(findName)
+                        break;
+
+                    case 2:
+                        buscarMatricula = prompt('Qual o número da matrícula?');
+                        findMatricula = alunos.find(aluno => aluno.matricula == buscarMatricula)
+                        alert(`A busca pela matrícula ${buscarMatricula} está disponível no seu console.`)
+                        console.table(findMatricula)
+                        break;
+                }
+                break;
+        }
+
+    } //fim do while
+</script>
